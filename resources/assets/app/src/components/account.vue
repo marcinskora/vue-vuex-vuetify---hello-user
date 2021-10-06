@@ -21,37 +21,14 @@
                 </v-row>
             </v-container>
 
-
-
-
-            ----{{$store.state.supername}}----
-            <br />
-            ----{{supername}}
-            <br />
-            ----{{superuser}}
-            <br />
-            ----{{superuser.firstname}}
-            <br />
-            ----{{abc}}
-            <br />
-
-
-            {{test}}
-            <br />
-            {{testUserFirstname}}
-            <br />
-            {{testUserLastname}}
-            <br />
-            {{testUserEmail}}
+            {{$store.getters['a/userFirstname']}}<br />
+            {{$store.getters['a/userLastname']}}<br />
+            {{$store.getters['a/userEmail']}}<br />
 
         </v-form>
   </div>
 </template>
 <script>
-    import { mapState } from 'vuex';
-    import { mapGetters } from 'vuex';
-    import { mapActions } from 'vuex'
-
     export default {
         data: () => ({
             valid: false,
@@ -61,66 +38,16 @@
         }),
         methods: {
             save() {
-                //this.$store.commit("userFirstname",this.firstname);
-                //this.$store.dispatch('delayuserFirstname',this.firstname);
-
-                /*
-                this.$store.dispatch({
-                    type :'delayuserFirstname',
-                    value: this.firstname
-                });
-                */
-
-                this.dufn({
-                    type :'delayuserFirstname',
-                    value: this.firstname
-                });
-
-
-                this.$store.commit("userLastname",this.lastname);
-                this.$store.commit("userEmail",this.email);
-            },
-            ...mapActions({
-                dufn: 'delayuserFirstname'
-            })
+                this.$store.commit("a/userFirstname",this.firstname);
+                this.$store.commit("a/userLastname",this.lastname);
+                this.$store.commit("a/userEmail",this.email);
+            }
 
         },
         created() {
-            //this.firstname = this.$store.getters.userFirstname;
-            //this.lastname = this.$store.getters.userLastname;
-            //this.email = this.$store.getters.userEmail;
-        },
-
-        computed: {
-            ...mapGetters({
-                testUserFirstname: 'userFirstname',
-                testUserLastname: 'userLastname',
-                testUserEmail: 'userEmail',
-            }),
-            test() {
-                return 'kkkkkkkkkkkkkkkkkk';
-            },
-            ...mapState({
-                supername: state => state.supername,
-                superuser: state => state.user,
-                abc: state => state.user
-                //countAlias: 'supername',
-                //countTest(state) {
-                //    return state.supername + ' ' + this.countAlias;
-                //}
-            })
+            this.firstname = this.$store.getters['a/userFirstname'];
+            this.lastname = this.$store.getters['a/userLastname'];
+            this.email = this.$store.getters['a/userEmail'];
         }
-
-        /*
-        computed: mapState({
-            supername: state => state.supername,
-            superuser: state => state.user,
-            abc: state => state.user
-            //countAlias: 'supername',
-            //countTest(state) {
-            //    return state.supername + ' ' + this.countAlias;
-            //}
-        })
-        */
     }
 </script>

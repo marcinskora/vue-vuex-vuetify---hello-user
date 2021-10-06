@@ -11,7 +11,7 @@
     export default {
         computed: {
             name() {
-                return this.$store.getters.userFirstname;
+                return ''; //this.$store.getters.userFirstname;
             }
         }
     }

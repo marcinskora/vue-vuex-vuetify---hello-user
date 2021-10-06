@@ -1,6 +1,6 @@
 export default {
     user: {
-        firstname: '',
+        firstname: 'Mmmmmmmm',
         lastname: '',
         email: '',
     },

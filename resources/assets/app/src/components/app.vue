@@ -46,7 +46,7 @@ export default {
 
     methods: {
         name() {
-            return this.$store.getters.userFirstname;
+            return '' //this.$store.getters.a.userFirstname;
         }
     }
 }
