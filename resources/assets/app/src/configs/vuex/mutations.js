@@ -1,11 +1,13 @@
+import { userFirstnameZmiana, userLastnameZmiana, userEmailZmiana } from './mutation-types'
+
 export default {
-    userFirstname(state,value) {
+    [userFirstnameZmiana](state,value) {
         state.user.firstname = value;
     },
-    userLastname(state,value) {
+    [userLastnameZmiana](state,value) {
         state.user.lastname = value;
     },
-    userEmail(state,value) {
+    [userEmailZmiana](state,value) {
         state.user.email = value;
     }
 }

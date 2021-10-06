@@ -3,5 +3,6 @@ export default {
         firstname: '',
         lastname: '',
         email: '',
-    }
+    },
+    supername: 'super test'
 }
