@@ -39,7 +39,8 @@ export default {
             drawer: null,
             links: [
                 ['mdi-home', 'Home','#/home'],
-                ['mdi-account', 'Account','#/account']
+                ['mdi-account', 'Account','#/account'],
+                ['', 'Workers','#/workers']
             ],
         }
     },
